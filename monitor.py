@@ -121,7 +121,7 @@ def send_telegram(text):
 # ──────────────────────────────────────────────
 def main():
     seen = load_seen()
-    first_run = len(seen) == 0
+    first_run = not STATE_FILE.exists()
     new_found = False
 
     for site in SITES:
